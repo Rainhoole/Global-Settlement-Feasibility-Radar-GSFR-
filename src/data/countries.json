@@ -2471,7 +2471,7 @@
   {
     "code": "DK",
     "name": "Denmark",
-    "name_zh": "??",
+    "name_zh": "瑞典",
     "region": "EUROPE",
     "scores": {
       "regulatory": 4,
@@ -2550,7 +2550,7 @@
   {
     "code": "SE",
     "name": "Sweden",
-    "name_zh": "??",
+    "name_zh": "挪威",
     "region": "EUROPE",
     "scores": {
       "regulatory": 4,
