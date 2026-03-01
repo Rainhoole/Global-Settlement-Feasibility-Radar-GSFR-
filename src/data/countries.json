@@ -1,0 +1,2708 @@
+[
+  {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "name_zh": "阿联酋",
+    "region": "MENA",
+    "scores": {
+      "regulatory": 5,
+      "rails": 5,
+      "demand": 5,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "AED",
+      "localRails": "Aani"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "No broad retail FX prohibition; regulated reporting and AML requirements apply.",
+      "forcedLocalClearing": false,
+      "regulationName": "Payment Token Services Regulation",
+      "regulatorBody": "Central Bank of the UAE",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://rulebook.centralbank.ae/en/rulebook/payment-token-services-regulation"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "Permitted under federal and free-zone regulatory frameworks with licensing.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.centralbank.ae/en/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "UAEFTS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "AED",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.centralbank.ae/en/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 14500000,
+      "shippingRank": 10,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Central Bank of the UAE",
+        "url": "https://rulebook.centralbank.ae/en/rulebook/payment-token-services-regulation",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payment_rail",
+        "institution": "Al Etihad Payments / CBUAE",
+        "url": "https://www.centralbank.ae/en/our-operations/market-infrastructure-and-payments/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "PH",
+    "name": "Philippines",
+    "name_zh": "菲律宾",
+    "region": "SEA",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 5,
+      "coverage": 3
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "just_launched",
+      "currency": "PHP",
+      "localRails": "InstaPay / PESONet"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Convertible for current account transactions with BSP reporting and AML controls.",
+      "forcedLocalClearing": null,
+      "regulationName": "BSP FX Rules",
+      "regulatorBody": "Bangko Sentral ng Pilipinas",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bsp.gov.ph/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "VASP framework exists; new non-bank VASP licensing has had restrictive windows.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.bsp.gov.ph/SitePages/Regulations/Regulations.aspx"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "PhilPaSSplus",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "PHP",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bsp.gov.ph/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 5300000,
+      "shippingRank": 28,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Bangko Sentral ng Pilipinas",
+        "url": "https://www.bsp.gov.ph/Pages/PaymentsAndSettlement/NPS.aspx",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "remittance",
+        "institution": "World Bank KNOMAD",
+        "url": "https://www.knomad.org/data/remittances",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "MX",
+    "name": "Mexico",
+    "name_zh": "墨西哥",
+    "region": "LATAM",
+    "scores": {
+      "regulatory": 3,
+      "rails": 5,
+      "demand": 5,
+      "coverage": 3
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "MXN",
+      "localRails": "SPEI"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "FX transactions are generally open, with compliance obligations and reporting.",
+      "forcedLocalClearing": false,
+      "regulationName": "Fintech Law and Banxico Circular 4/2019",
+      "regulatorBody": "Banco de Mexico / CNBV",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.banxico.org.mx/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "Regulated entities face restrictions on offering crypto directly to retail clients.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.banxico.org.mx/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "SPEI",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "MXN",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.banxico.org.mx/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 8900000,
+      "shippingRank": 15,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Banco de Mexico",
+        "url": "https://www.banxico.org.mx/sistemas-de-pago/spei.html",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Government of Mexico",
+        "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LRITF_090318.pdf",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "remittance",
+        "institution": "World Bank KNOMAD",
+        "url": "https://www.knomad.org/data/remittances",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "BR",
+    "name": "Brazil",
+    "name_zh": "巴西",
+    "region": "LATAM",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 3
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "BRL",
+      "localRails": "Pix"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Cross-border FX is liberalized for many flows with registration and tax/reporting constraints.",
+      "forcedLocalClearing": null,
+      "regulationName": "Law 14,478 and BCB resolutions",
+      "regulatorBody": "Banco Central do Brasil",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bcb.gov.br/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "Virtual asset framework exists and licensing requirements are tightening.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.bcb.gov.br/estabilidadefinanceira/criptoativos"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "STR / Pix infrastructure",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "BRL",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bcb.gov.br/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 13000000,
+      "shippingRank": 18,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Banco Central do Brasil",
+        "url": "https://www.bcb.gov.br/en/financialstability/pix_en",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Government of Brazil",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14478.htm",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "HK",
+    "name": "Hong Kong",
+    "name_zh": "中国香港",
+    "region": "APAC",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 5,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "HKD",
+      "eta": "Q2 2026",
+      "localRails": "FPS"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Highly open FX regime with strong AML and sanctions compliance requirements.",
+      "forcedLocalClearing": false,
+      "regulationName": "Stablecoin Ordinance and VASP regime",
+      "regulatorBody": "HKMA / SFC",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.hkma.gov.hk/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "Licensed framework for exchanges and dedicated stablecoin regulation pathway.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.sfc.hk/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "HKD CHATS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "HKD",
+        "USD",
+        "CNH"
+      ],
+      "centralBankUrl": "https://www.hkma.gov.hk/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 17000000,
+      "shippingRank": 9,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Hong Kong Monetary Authority",
+        "url": "https://www.hkma.gov.hk/eng/key-functions/international-financial-centre/financial-market-infrastructure/fps/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Securities and Futures Commission",
+        "url": "https://www.sfc.hk/en/Regulatory-functions/Intermediaries/Virtual-asset-trading-platforms",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "name_zh": "沙特阿拉伯",
+    "region": "MENA",
+    "scores": {
+      "regulatory": 2,
+      "rails": 4,
+      "demand": 5,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "SAR",
+      "eta": "Q3 2026",
+      "localRails": "SARIE / sarie"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Cross-border flows are active but virtual-asset usage remains tightly supervised.",
+      "forcedLocalClearing": null,
+      "regulationName": "SAMA sandbox-led virtual asset approach",
+      "regulatorBody": "Saudi Central Bank (SAMA)",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.sama.gov.sa/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "No broad retail legalization; sandbox and supervisory pilots are preferred path.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.sama.gov.sa/en-US/RegulatorySandbox/Pages/default.aspx"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "SARIE",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "SAR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.sama.gov.sa/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 10100000,
+      "shippingRank": 20,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Saudi Central Bank",
+        "url": "https://www.sama.gov.sa/en-US/PaymentAndSettlementSystems/Pages/default.aspx",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Saudi Central Bank",
+        "url": "https://www.sama.gov.sa/en-US/RegulatorySandbox/Pages/default.aspx",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "remittance",
+        "institution": "World Bank KNOMAD",
+        "url": "https://www.knomad.org/data/remittances",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "name_zh": "美国",
+    "region": "NORTH_AMERICA",
+    "scores": {
+      "regulatory": 3,
+      "rails": 4,
+      "demand": 5,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "USD",
+      "localRails": "ACH / Fedwire"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open current account with extensive AML, sanctions, and money-transmitter controls.",
+      "forcedLocalClearing": false,
+      "regulationName": "Bank Secrecy Act and state/federal money transmission rules",
+      "regulatorBody": "FinCEN / Federal Reserve / state regulators",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.fincen.gov/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Permitted with compliance controls; policy remains fragmented across agencies.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.federalreserve.gov/paymentsystems/fednow_about.htm"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "Fedwire",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "USD"
+      ],
+      "centralBankUrl": "https://www.federalreserve.gov/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 55000000,
+      "shippingRank": 2,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Federal Reserve",
+        "url": "https://www.federalreserve.gov/paymentsystems/fednow_about.htm",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "compliance",
+        "institution": "FinCEN",
+        "url": "https://www.fincen.gov/resources/statutes-and-regulations",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "name_zh": "英国",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "GBP",
+      "localRails": "FPS"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open regime with strong AML and sanctions screening obligations.",
+      "forcedLocalClearing": false,
+      "regulationName": "Payment Services Regulations and FCA framework",
+      "regulatorBody": "FCA / Bank of England",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.fca.org.uk/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Regulated access via FCA registration and ongoing stablecoin regime development.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.fca.org.uk/cryptoassets"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "CHAPS / FPS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "GBP",
+        "USD",
+        "EUR"
+      ],
+      "centralBankUrl": "https://www.bankofengland.co.uk/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 8000000,
+      "shippingRank": 24,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Pay.UK",
+        "url": "https://www.wearepay.uk/what-we-do/faster-payment-system/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Financial Conduct Authority",
+        "url": "https://www.fca.org.uk/cryptoassets",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "AU",
+    "name": "Australia",
+    "name_zh": "澳大利亚",
+    "region": "APAC",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 3,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "AUD",
+      "localRails": "NPP"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Generally open with AML obligations for remittance and digital-asset providers.",
+      "forcedLocalClearing": false,
+      "regulationName": "AUSTRAC digital currency exchange registration",
+      "regulatorBody": "RBA / AUSTRAC / ASIC",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.austrac.gov.au/business/industry-specific-guidance/digital-currency-exchange-providers"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Permissive but supervised via AML and market-conduct rules.",
+      "hasFramework": true,
+      "sourceUrl": "https://asic.gov.au/for-business/running-a-company/crypto-assets/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "RITS / NPP",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "AUD",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.rba.gov.au/payments-and-infrastructure/new-payments-platform/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 9200000,
+      "shippingRank": 23,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "payments",
+        "institution": "Reserve Bank of Australia",
+        "url": "https://www.rba.gov.au/payments-and-infrastructure/new-payments-platform/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "compliance",
+        "institution": "AUSTRAC",
+        "url": "https://www.austrac.gov.au/business/industry-specific-guidance/digital-currency-exchange-providers",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "SG",
+    "name": "Singapore",
+    "name_zh": "新加坡",
+    "region": "SEA",
+    "scores": {
+      "regulatory": 5,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "SGD",
+      "eta": "Q2 2026",
+      "localRails": "FAST / PayNow"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX market with strict AML/CFT and licensing requirements.",
+      "forcedLocalClearing": false,
+      "regulationName": "Payment Services Act",
+      "regulatorBody": "Monetary Authority of Singapore",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.mas.gov.sg/regulation/acts/payment-services-act"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "MAS licensing framework and stablecoin-specific requirements are in place.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.mas.gov.sg/news/media-releases/2023/mas-finalises-regulatory-framework-for-single-currency-stablecoins"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "MEPS+ / FAST",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "SGD",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.mas.gov.sg/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 39000000,
+      "shippingRank": 2,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Monetary Authority of Singapore",
+        "url": "https://www.mas.gov.sg/regulation/acts/payment-services-act",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "Monetary Authority of Singapore",
+        "url": "https://www.mas.gov.sg/development/payments",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "CO",
+    "name": "Colombia",
+    "name_zh": "哥伦比亚",
+    "region": "LATAM",
+    "scores": {
+      "regulatory": 3,
+      "rails": 4,
+      "demand": 4,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "just_launched",
+      "currency": "COP",
+      "localRails": "PSE / ACH"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "FX transactions require registration; controls on capital movements apply.",
+      "forcedLocalClearing": null,
+      "regulationName": "Decree 2555 and Superfinanciera rules",
+      "regulatorBody": "Banco de la República / Superfinanciera",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.banrep.gov.co/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "No explicit prohibition; sandbox environment for fintech and crypto firms.",
+      "hasFramework": false,
+      "sourceUrl": "https://www.superfinanciera.gov.co/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "CUD",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "COP",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.banrep.gov.co/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 4500000,
+      "shippingRank": 30,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Banco de la República",
+        "url": "https://www.banrep.gov.co/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "ACH Colombia",
+        "url": "https://www.achcolombia.com.co/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "AR",
+    "name": "Argentina",
+    "name_zh": "阿根廷",
+    "region": "LATAM",
+    "scores": {
+      "regulatory": 3,
+      "rails": 3,
+      "demand": 4,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "just_launched",
+      "currency": "ARS",
+      "localRails": "DEBIN / Transferencias 3.0"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "strict",
+      "crossBorderRestriction": "Strict capital controls (cepo cambiario); multiple exchange rates and restrictions on USD purchases.",
+      "forcedLocalClearing": true,
+      "regulationName": "BCRA Communication A series",
+      "regulatorBody": "Banco Central de la República Argentina",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bcra.gob.ar/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "Crypto is not legal tender; BCRA has restricted bank involvement; VASP registration required by CNV.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.argentina.gob.ar/cnv"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "MEP",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "ARS",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bcra.gob.ar/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "high"
+    },
+    "shipping": {
+      "portThroughputTEU": 2000000,
+      "shippingRank": 45,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "BCRA",
+        "url": "https://www.bcra.gob.ar/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "BCRA",
+        "url": "https://www.bcra.gob.ar/MediosPago/Medios_pago.asp",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "CL",
+    "name": "Chile",
+    "name_zh": "智利",
+    "region": "LATAM",
+    "scores": {
+      "regulatory": 4,
+      "rails": 4,
+      "demand": 3,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "CLP",
+      "eta": "Q1 2026",
+      "localRails": "TEF"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Generally open FX market with reporting requirements for large transactions.",
+      "forcedLocalClearing": false,
+      "regulationName": "Fintech Law (Ley 21.521)",
+      "regulatorBody": "Banco Central de Chile / CMF",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bcentral.cl/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Fintech law provides framework; CMF supervises crypto service providers.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.cmfchile.cl/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "LBTR",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "CLP",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bcentral.cl/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 4200000,
+      "shippingRank": 32,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Banco Central de Chile",
+        "url": "https://www.bcentral.cl/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "CMF Chile",
+        "url": "https://www.cmfchile.cl/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "IN",
+    "name": "India",
+    "name_zh": "印度",
+    "region": "APAC",
+    "scores": {
+      "regulatory": 3,
+      "rails": 5,
+      "demand": 5,
+      "coverage": 3
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "INR",
+      "eta": "Q3 2026",
+      "localRails": "UPI / IMPS / RTGS"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Current account convertible; capital account has significant controls under FEMA.",
+      "forcedLocalClearing": null,
+      "regulationName": "FEMA and RBI Master Directions",
+      "regulatorBody": "Reserve Bank of India",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.rbi.org.in/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "30% tax on crypto gains; 1% TDS on transfers; RBI cautious but no outright ban.",
+      "hasFramework": false,
+      "sourceUrl": "https://www.rbi.org.in/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "RTGS / UPI / IMPS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "INR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.rbi.org.in/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 18000000,
+      "shippingRank": 12,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Reserve Bank of India",
+        "url": "https://www.rbi.org.in/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "NPCI",
+        "url": "https://www.npci.org.in/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "ID",
+    "name": "Indonesia",
+    "name_zh": "印度尼西亚",
+    "region": "SEA",
+    "scores": {
+      "regulatory": 3,
+      "rails": 4,
+      "demand": 4,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "IDR",
+      "eta": "Q2 2026",
+      "localRails": "BI-FAST"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "FX transactions regulated; hedging requirements and reporting obligations apply.",
+      "forcedLocalClearing": null,
+      "regulationName": "Bank Indonesia Regulations on FX",
+      "regulatorBody": "Bank Indonesia / OJK",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bi.go.id/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Crypto traded as commodities under Bappebti; OJK to take over supervision.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.ojk.go.id/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "BI-RTGS / BI-FAST",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "IDR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bi.go.id/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 16000000,
+      "shippingRank": 14,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Bank Indonesia",
+        "url": "https://www.bi.go.id/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "Bank Indonesia",
+        "url": "https://www.bi.go.id/id/fungsi-utama/sistem-pembayaran/default.aspx",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "ZA",
+    "name": "South Africa",
+    "name_zh": "南非",
+    "region": "AFRICA",
+    "scores": {
+      "regulatory": 3,
+      "rails": 4,
+      "demand": 3,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "ZAR",
+      "eta": "Q3 2026",
+      "localRails": "RTC"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Exchange controls managed by SARB; authorized dealers required for cross-border flows.",
+      "forcedLocalClearing": null,
+      "regulationName": "Exchange Control Regulations",
+      "regulatorBody": "South African Reserve Bank",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.resbank.co.za/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "FSCA declared crypto as financial product; licensing required for crypto asset service providers.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.fsca.co.za/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "SAMOS / RTC",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "ZAR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.resbank.co.za/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 5000000,
+      "shippingRank": 35,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "South African Reserve Bank",
+        "url": "https://www.resbank.co.za/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "compliance",
+        "institution": "FSCA",
+        "url": "https://www.fsca.co.za/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "name_zh": "土耳其",
+    "region": "MENA",
+    "scores": {
+      "regulatory": 2,
+      "rails": 4,
+      "demand": 4,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "TRY",
+      "eta": "Q3 2026",
+      "localRails": "FAST"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "FX market active but CBRT imposes periodic controls; lira conversion requirements.",
+      "forcedLocalClearing": null,
+      "regulationName": "CBRT Communiqués and CMB regulations",
+      "regulatorBody": "Central Bank of the Republic of Türkiye / CMB",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.tcmb.gov.tr/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "Crypto payments banned for commerce; new licensing framework under development by CMB.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.cmb.gov.tr/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "EFT / FAST",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "TRY",
+        "USD",
+        "EUR"
+      ],
+      "centralBankUrl": "https://www.tcmb.gov.tr/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "high"
+    },
+    "shipping": {
+      "portThroughputTEU": 12000000,
+      "shippingRank": 16,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "CBRT",
+        "url": "https://www.tcmb.gov.tr/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "CBRT",
+        "url": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Core+Functions/Payment+Systems/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "KR",
+    "name": "South Korea",
+    "name_zh": "韩国",
+    "region": "APAC",
+    "scores": {
+      "regulatory": 3,
+      "rails": 5,
+      "demand": 3,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "KRW",
+      "eta": "Q3 2026",
+      "localRails": "HOFINET / eCheck"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Open for current account; capital transactions require BOK reporting.",
+      "forcedLocalClearing": false,
+      "regulationName": "Foreign Exchange Transactions Act",
+      "regulatorBody": "Bank of Korea / FSC",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bok.or.kr/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Virtual Asset User Protection Act enacted; exchanges must register with FIU.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.fsc.go.kr/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "BOK-Wire+ / HOFINET",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "KRW",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bok.or.kr/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 30000000,
+      "shippingRank": 6,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Bank of Korea",
+        "url": "https://www.bok.or.kr/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "Bank of Korea",
+        "url": "https://www.bok.or.kr/eng/main/contents.do?menuNo=400200",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "JP",
+    "name": "Japan",
+    "name_zh": "日本",
+    "region": "APAC",
+    "scores": {
+      "regulatory": 3,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "JPY",
+      "eta": "Q4 2026",
+      "localRails": "Zengin System"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX market with reporting requirements for large transactions.",
+      "forcedLocalClearing": false,
+      "regulationName": "Payment Services Act / FIEA",
+      "regulatorBody": "FSA / Bank of Japan",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.fsa.go.jp/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "Stablecoin legislation enacted 2023; licensed exchanges operate under FSA oversight.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.fsa.go.jp/en/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "BOJ-NET / Zengin",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "JPY",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.boj.or.jp/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 22000000,
+      "shippingRank": 8,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "FSA Japan",
+        "url": "https://www.fsa.go.jp/en/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "Bank of Japan",
+        "url": "https://www.boj.or.jp/en/paym/outline/index.htm",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "CA",
+    "name": "Canada",
+    "name_zh": "加拿大",
+    "region": "NORTH_AMERICA",
+    "scores": {
+      "regulatory": 4,
+      "rails": 4,
+      "demand": 3,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "CAD",
+      "eta": "Q2 2026",
+      "localRails": "Interac e-Transfer"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX regime with FINTRAC AML reporting requirements.",
+      "forcedLocalClearing": false,
+      "regulationName": "PCMLTFA and provincial securities regulation",
+      "regulatorBody": "FINTRAC / OSFI / CSA",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bankofcanada.ca/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Crypto trading platforms must register with provincial securities regulators; AML registration with FINTRAC.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.securities-administrators.ca/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "Lynx / Interac",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "CAD",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bankofcanada.ca/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 7500000,
+      "shippingRank": 22,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Bank of Canada",
+        "url": "https://www.bankofcanada.ca/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "compliance",
+        "institution": "FINTRAC",
+        "url": "https://www.fintrac-canafe.gc.ca/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "CH",
+    "name": "Switzerland",
+    "name_zh": "瑞士",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 5,
+      "rails": 5,
+      "demand": 3,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "CHF",
+      "eta": "Q2 2026",
+      "localRails": "SIC / SEPA Instant"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Fully open FX market; strong AML framework under AMLA.",
+      "forcedLocalClearing": false,
+      "regulationName": "FINMA Fintech License / Banking Act",
+      "regulatorBody": "FINMA / SNB",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.finma.ch/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "FINMA provides clear regulatory framework; DLT Act enables tokenized securities and stablecoins.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.finma.ch/en/finma/fintech/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "SIC / SIX",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "CHF",
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.snb.ch/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 500000,
+      "shippingRank": 80,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "FINMA",
+        "url": "https://www.finma.ch/en/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "SIX Group",
+        "url": "https://www.six-group.com/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "NZ",
+    "name": "New Zealand",
+    "name_zh": "新西兰",
+    "region": "APAC",
+    "scores": {
+      "regulatory": 4,
+      "rails": 4,
+      "demand": 2,
+      "coverage": 3
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "NZD",
+      "eta": "Q2 2026",
+      "localRails": "ESAS / SBI"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX market with AML/CFT requirements under AMLCFT Act.",
+      "forcedLocalClearing": false,
+      "regulationName": "AMLCFT Act and FMA regulation",
+      "regulatorBody": "RBNZ / FMA",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.rbnz.govt.nz/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "No specific crypto legislation; treated as property for tax; AML registration required.",
+      "hasFramework": false,
+      "sourceUrl": "https://www.fma.govt.nz/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "ESAS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "NZD",
+        "USD",
+        "AUD"
+      ],
+      "centralBankUrl": "https://www.rbnz.govt.nz/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 3200000,
+      "shippingRank": 40,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "RBNZ",
+        "url": "https://www.rbnz.govt.nz/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "RBNZ",
+        "url": "https://www.rbnz.govt.nz/financial-stability/payment-and-settlement-systems",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "name_zh": "德国",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "EUR",
+      "localRails": "SEPA Instant / TARGET2"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open EU single market; free capital movement within EEA.",
+      "forcedLocalClearing": false,
+      "regulationName": "MiCA / KWG / ZAG",
+      "regulatorBody": "BaFin / Bundesbank",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bafin.de/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "EU MiCA framework fully applicable; BaFin licenses crypto custodians and exchanges.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.bafin.de/EN/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "TARGET2 / SEPA Instant",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bundesbank.de/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 15000000,
+      "shippingRank": 11,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "BaFin",
+        "url": "https://www.bafin.de/EN/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "Deutsche Bundesbank",
+        "url": "https://www.bundesbank.de/en/tasks/payment-systems",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "name_zh": "法国",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "EUR",
+      "localRails": "SEPA Instant / TARGET2"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open EU single market; free capital movement within EEA.",
+      "forcedLocalClearing": false,
+      "regulationName": "MiCA / Code monétaire et financier",
+      "regulatorBody": "AMF / ACPR / Banque de France",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.amf-france.org/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "EU MiCA framework; AMF PSAN registration required for crypto service providers.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.amf-france.org/en"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "TARGET2 / SEPA Instant",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.banque-france.fr/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 6000000,
+      "shippingRank": 25,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "AMF France",
+        "url": "https://www.amf-france.org/en",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "Banque de France",
+        "url": "https://www.banque-france.fr/en/financial-stability/market-infrastructure-and-payment-systems",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "NL",
+    "name": "Netherlands",
+    "name_zh": "荷兰",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "EUR",
+      "localRails": "SEPA Instant / TARGET2"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open EU single market; free capital movement within EEA.",
+      "forcedLocalClearing": false,
+      "regulationName": "MiCA / Wft",
+      "regulatorBody": "DNB / AFM",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.dnb.nl/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "EU MiCA framework; DNB registration required for crypto service providers.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.dnb.nl/en/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "TARGET2 / SEPA Instant",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.dnb.nl/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 14500000,
+      "shippingRank": 10,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "De Nederlandsche Bank",
+        "url": "https://www.dnb.nl/en/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "DNB",
+        "url": "https://www.dnb.nl/en/payments/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "PA",
+    "name": "Panama",
+    "name_zh": "巴拿马",
+    "region": "LATAM",
+    "scores": {
+      "regulatory": 4,
+      "rails": 3,
+      "demand": 3,
+      "coverage": 1
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "not_covered",
+      "currency": "USD",
+      "localRails": "ACH Panama"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Dollarized economy; open FX regime with banking secrecy traditions.",
+      "forcedLocalClearing": false,
+      "regulationName": "Banking Law and SBP regulations",
+      "regulatorBody": "Superintendencia de Bancos de Panamá",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.superbancos.gob.pa/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "No specific crypto regulation; crypto law was vetoed in 2022; gray area.",
+      "hasFramework": false,
+      "sourceUrl": "https://www.superbancos.gob.pa/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "ACH / CENIT",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "USD",
+        "PAB"
+      ],
+      "centralBankUrl": "https://www.superbancos.gob.pa/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 8000000,
+      "shippingRank": 17,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "SBP",
+        "url": "https://www.superbancos.gob.pa/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "EG",
+    "name": "Egypt",
+    "name_zh": "埃及",
+    "region": "MENA",
+    "scores": {
+      "regulatory": 2,
+      "rails": 3,
+      "demand": 4,
+      "coverage": 1
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "not_covered",
+      "currency": "EGP",
+      "localRails": "IPN"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "strict",
+      "crossBorderRestriction": "Managed float; CBE controls FX allocation; dollar shortages have been recurring.",
+      "forcedLocalClearing": true,
+      "regulationName": "CBE Banking Law 194/2020",
+      "regulatorBody": "Central Bank of Egypt",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.cbe.org.eg/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "CBE has historically banned crypto trading for banks; limited sandbox initiatives.",
+      "hasFramework": false,
+      "sourceUrl": "https://www.cbe.org.eg/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "RTGS / IPN",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "EGP",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.cbe.org.eg/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "high"
+    },
+    "shipping": {
+      "portThroughputTEU": 8500000,
+      "shippingRank": 19,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Central Bank of Egypt",
+        "url": "https://www.cbe.org.eg/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "MY",
+    "name": "Malaysia",
+    "name_zh": "马来西亚",
+    "region": "SEA",
+    "scores": {
+      "regulatory": 3,
+      "rails": 4,
+      "demand": 3,
+      "coverage": 2
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "not_covered",
+      "currency": "MYR",
+      "localRails": "DuitNow / RPP"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "BNM manages FX via prudential rules; onshore ringgit market restrictions.",
+      "forcedLocalClearing": null,
+      "regulationName": "FSA 2013 and BNM FX Administration Rules",
+      "regulatorBody": "Bank Negara Malaysia / SC",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bnm.gov.my/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "SC regulates digital asset exchanges; BNM does not recognize crypto as legal tender.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.sc.com.my/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "RENTAS / DuitNow",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "MYR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bnm.gov.my/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 28000000,
+      "shippingRank": 7,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Bank Negara Malaysia",
+        "url": "https://www.bnm.gov.my/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "PayNet",
+        "url": "https://www.paynet.my/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "NG",
+    "name": "Nigeria",
+    "name_zh": "尼日利亚",
+    "region": "AFRICA",
+    "scores": {
+      "regulatory": 2,
+      "rails": 3,
+      "demand": 4,
+      "coverage": 1
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "not_covered",
+      "currency": "NGN",
+      "localRails": "NIP / NIBSS"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "partial",
+      "capitalControl": "strict",
+      "crossBorderRestriction": "Multiple exchange rate windows; CBN controls FX allocation; naira under pressure.",
+      "forcedLocalClearing": true,
+      "regulationName": "CBN FX Policy Circulars",
+      "regulatorBody": "Central Bank of Nigeria",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.cbn.gov.ng/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "restricted",
+      "bankCryptoPolicy": "CBN lifted banking ban in 2023; SEC regulates digital assets; eNaira CBDC launched.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.sec.gov.ng/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "CIFTS / NIP",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "NGN",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.cbn.gov.ng/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "high"
+    },
+    "shipping": {
+      "portThroughputTEU": 2500000,
+      "shippingRank": 42,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Central Bank of Nigeria",
+        "url": "https://www.cbn.gov.ng/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "NIBSS",
+        "url": "https://www.nibss-plc.com.ng/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "name_zh": "肯尼亚",
+    "region": "AFRICA",
+    "scores": {
+      "regulatory": 3,
+      "rails": 4,
+      "demand": 3,
+      "coverage": 1
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "not_covered",
+      "currency": "KES",
+      "localRails": "PesaLink / M-Pesa"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "partial",
+      "crossBorderRestriction": "Generally convertible; CBK monitors large transfers; AML requirements apply.",
+      "forcedLocalClearing": false,
+      "regulationName": "CBK Prudential Guidelines",
+      "regulatorBody": "Central Bank of Kenya",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.centralbank.go.ke/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "No specific crypto regulation; CBK cautious but no ban; CMA exploring framework.",
+      "hasFramework": false,
+      "sourceUrl": "https://www.centralbank.go.ke/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "KEPSS / PesaLink",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "KES",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.centralbank.go.ke/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "medium"
+    },
+    "shipping": {
+      "portThroughputTEU": 1400000,
+      "shippingRank": 55,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Central Bank of Kenya",
+        "url": "https://www.centralbank.go.ke/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "payments",
+        "institution": "CBK",
+        "url": "https://www.centralbank.go.ke/national-payments-system/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "name_zh": "???",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "EUR",
+      "localRails": "SEPA Instant / TARGET2"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open EU single market; free capital movement within EEA.",
+      "forcedLocalClearing": false,
+      "regulationName": "MiCA / TUB / PSD2 local implementation",
+      "regulatorBody": "Banca d'Italia / CONSOB",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bancaditalia.it/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "EU MiCA framework applicable; CASP authorization supervised under national competent authorities.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.consob.it/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "TARGET2 / SEPA Instant",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bancaditalia.it/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 11000000,
+      "shippingRank": 16,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Banca d'Italia",
+        "url": "https://www.bancaditalia.it/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "CONSOB",
+        "url": "https://www.consob.it/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "name_zh": "???",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 4,
+      "coverage": 5
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "active",
+      "currency": "EUR",
+      "localRails": "SEPA Instant / TARGET2"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open EU single market; free capital movement within EEA.",
+      "forcedLocalClearing": false,
+      "regulationName": "MiCA / Law 10/2010 AML / PSD2 implementation",
+      "regulatorBody": "Banco de Espa?a / CNMV",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.bde.es/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "EU MiCA framework applicable; VASP/CASP requirements supervised by competent authorities.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.cnmv.es/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "TARGET2 / SEPA Instant",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.bde.es/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 17500000,
+      "shippingRank": 12,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Banco de Espa?a",
+        "url": "https://www.bde.es/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "CNMV",
+        "url": "https://www.cnmv.es/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "name_zh": "??",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 3,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "DKK",
+      "eta": "Q4 2026",
+      "localRails": "Kronos2 / TIPS"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX market under EU single market rules with AML obligations.",
+      "forcedLocalClearing": false,
+      "regulationName": "Danish Financial Business Act / EU MiCA",
+      "regulatorBody": "Danmarks Nationalbank / DFSA",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.nationalbanken.dk/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "CASP activities aligned with EU framework; ongoing supervisory implementation.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.dfsa.dk/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "Kronos2 / TIPS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "DKK",
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.nationalbanken.dk/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 4200000,
+      "shippingRank": 36,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Danmarks Nationalbank",
+        "url": "https://www.nationalbanken.dk/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Danish Financial Supervisory Authority",
+        "url": "https://www.dfsa.dk/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "name_zh": "??",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 3,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "SEK",
+      "eta": "Q4 2026",
+      "localRails": "RIX-INST / Swish"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX market with robust AML/CTF controls and reporting obligations.",
+      "forcedLocalClearing": false,
+      "regulationName": "Swedish Foreign Exchange Act / EU MiCA",
+      "regulatorBody": "Riksbank / Finansinspektionen",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.riksbank.se/"
+    },
+    "digitalAsset": {
+      "legalStatus": "legal",
+      "stablecoinStatus": "regulated",
+      "bankCryptoPolicy": "Crypto-asset supervision follows EU framework with local supervisory requirements.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.fi.se/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "RIX-INST",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "SEK",
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.riksbank.se/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 5300000,
+      "shippingRank": 30,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Sveriges Riksbank",
+        "url": "https://www.riksbank.se/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Finansinspektionen",
+        "url": "https://www.fi.se/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  },
+  {
+    "code": "NO",
+    "name": "Norway",
+    "name_zh": "??",
+    "region": "EUROPE",
+    "scores": {
+      "regulatory": 4,
+      "rails": 5,
+      "demand": 2,
+      "coverage": 4
+    },
+    "feasibilityIndex": 0,
+    "openfx": {
+      "status": "coming_soon",
+      "currency": "NOK",
+      "eta": "Q4 2026",
+      "localRails": "NBO / NICS"
+    },
+    "fxRegime": {
+      "currentAccountConvertible": "yes",
+      "capitalControl": "open",
+      "crossBorderRestriction": "Open FX market with EEA-aligned prudential and AML requirements.",
+      "forcedLocalClearing": false,
+      "regulationName": "Financial Institutions Act / EEA regulatory framework",
+      "regulatorBody": "Norges Bank / Finanstilsynet",
+      "lastUpdated": "2026-02-28",
+      "sourceUrl": "https://www.norges-bank.no/"
+    },
+    "digitalAsset": {
+      "legalStatus": "gray",
+      "stablecoinStatus": "allowed",
+      "bankCryptoPolicy": "Crypto services are permitted with AML registration and supervisory controls.",
+      "hasFramework": true,
+      "sourceUrl": "https://www.finanstilsynet.no/"
+    },
+    "infrastructure": {
+      "swiftMember": true,
+      "hasRTGS": true,
+      "rtgsName": "NBO / NICS",
+      "hasForeignBanks": true,
+      "primaryClearingCurrency": [
+        "NOK",
+        "EUR",
+        "USD"
+      ],
+      "centralBankUrl": "https://www.norges-bank.no/"
+    },
+    "sanctions": {
+      "ofacListed": false,
+      "euRestricted": false,
+      "ukRestricted": false,
+      "riskLevel": "low"
+    },
+    "shipping": {
+      "portThroughputTEU": 2700000,
+      "shippingRank": 43,
+      "unctadSource": "https://unctadstat.unctad.org/"
+    },
+    "sources": [
+      {
+        "type": "regulation",
+        "institution": "Norges Bank",
+        "url": "https://www.norges-bank.no/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "regulation",
+        "institution": "Finanstilsynet Norway",
+        "url": "https://www.finanstilsynet.no/",
+        "lastVerified": "2026-02-28"
+      },
+      {
+        "type": "shipping",
+        "institution": "UNCTAD",
+        "url": "https://unctadstat.unctad.org/",
+        "lastVerified": "2026-02-28"
+      }
+    ]
+  }
+]
