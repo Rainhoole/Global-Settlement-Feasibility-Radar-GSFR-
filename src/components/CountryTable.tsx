@@ -1,9 +1,18 @@
-import { useMemo, useState } from 'react';
+﻿import { useMemo, useState } from 'react';
 import type { CountryData } from '../types/country';
 import { getColorByScore } from '../data';
 import { flagEmoji, openfxBadgeColor, openfxLabel, scoreColor } from '../utils';
+import { useI18n } from '../i18n';
 
-type SortKey = 'name' | 'region' | 'regulatory' | 'rails' | 'demand' | 'coverage' | 'feasibilityIndex' | 'openfx';
+type SortKey =
+  | 'name'
+  | 'region'
+  | 'regulatory'
+  | 'rails'
+  | 'demand'
+  | 'coverage'
+  | 'feasibilityIndex'
+  | 'openfx';
 type SortDir = 'asc' | 'desc';
 
 interface CountryTableProps {
@@ -12,32 +21,42 @@ interface CountryTableProps {
   selectedCode?: string;
 }
 
-const COLUMNS: { key: SortKey; label: string; short: string }[] = [
-  { key: 'name', label: '国家', short: '国家' },
-  { key: 'region', label: '区域', short: '区域' },
-  { key: 'regulatory', label: '监管', short: '监管' },
-  { key: 'rails', label: 'Rails', short: 'Rails' },
-  { key: 'demand', label: '需求', short: '需求' },
-  { key: 'coverage', label: '覆盖度', short: '覆盖' },
-  { key: 'feasibilityIndex', label: '可行性指数', short: '指数' },
-  { key: 'openfx', label: 'OpenFX', short: 'OpenFX' },
+const COLUMNS: { key: SortKey; label: string }[] = [
+  { key: 'name', label: 'Country' },
+  { key: 'region', label: 'Region' },
+  { key: 'regulatory', label: 'Reg' },
+  { key: 'rails', label: 'Rails' },
+  { key: 'demand', label: 'Demand' },
+  { key: 'coverage', label: 'Coverage' },
+  { key: 'feasibilityIndex', label: 'Index' },
+  { key: 'openfx', label: 'OpenFX' },
 ];
 
 function getSortValue(country: CountryData, key: SortKey): string | number {
   switch (key) {
-    case 'name': return country.name;
-    case 'region': return country.region;
-    case 'regulatory': return country.scores.regulatory;
-    case 'rails': return country.scores.rails;
-    case 'demand': return country.scores.demand;
-    case 'coverage': return country.scores.coverage;
-    case 'feasibilityIndex': return country.feasibilityIndex;
-    case 'openfx': return country.openfx.status;
-    default: return 0;
+    case 'name':
+      return country.name;
+    case 'region':
+      return country.region;
+    case 'regulatory':
+      return country.scores.regulatory;
+    case 'rails':
+      return country.scores.rails;
+    case 'demand':
+      return country.scores.demand;
+    case 'coverage':
+      return country.scores.coverage;
+    case 'feasibilityIndex':
+      return country.feasibilityIndex;
+    case 'openfx':
+      return country.openfx.status;
+    default:
+      return 0;
   }
 }
 
 export function CountryTable({ countries, onCountrySelect, selectedCode }: CountryTableProps) {
+  const { language, t } = useI18n();
   const [sortKey, setSortKey] = useState<SortKey>('feasibilityIndex');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
 
@@ -45,7 +64,10 @@ export function CountryTable({ countries, onCountrySelect, selectedCode }: Count
     return [...countries].sort((a, b) => {
       const va = getSortValue(a, sortKey);
       const vb = getSortValue(b, sortKey);
-      const cmp = typeof va === 'number' && typeof vb === 'number' ? va - vb : String(va).localeCompare(String(vb));
+      const cmp =
+        typeof va === 'number' && typeof vb === 'number'
+          ? va - vb
+          : String(va).localeCompare(String(vb));
       return sortDir === 'asc' ? cmp : -cmp;
     });
   }, [countries, sortKey, sortDir]);
@@ -53,62 +75,59 @@ export function CountryTable({ countries, onCountrySelect, selectedCode }: Count
   function toggleSort(key: SortKey) {
     if (sortKey === key) {
       setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'));
-    } else {
-      setSortKey(key);
-      setSortDir(key === 'name' ? 'asc' : 'desc');
+      return;
     }
+
+    setSortKey(key);
+    setSortDir(key === 'name' ? 'asc' : 'desc');
   }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm border-collapse">
+    <div className="country-table-wrap">
+      <table className="country-table">
         <thead>
-          <tr className="border-b border-[#334155]">
-            <th className="text-left text-xs font-medium text-[#94a3b8] px-3 py-3 w-8">#</th>
+          <tr>
+            <th className="country-col-index">#</th>
             {COLUMNS.map((col) => (
-              <th
-                key={col.key}
-                onClick={() => toggleSort(col.key)}
-                className="text-left text-xs font-medium text-[#94a3b8] px-3 py-3 cursor-pointer hover:text-[#e2e8f0] select-none whitespace-nowrap"
-              >
-                {col.short}
-                {sortKey === col.key && (
-                  <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>
-                )}
+              <th key={col.key} onClick={() => toggleSort(col.key)}>
+                {t(col.label)}
+                {sortKey === col.key && <span className="country-sort-arrow">{sortDir === 'asc' ? '↑' : '↓'}</span>}
               </th>
             ))}
-            <th className="text-left text-xs font-medium text-[#94a3b8] px-3 py-3 w-10"></th>
+            <th className="country-col-arrow" />
           </tr>
         </thead>
+
         <tbody>
           {sorted.map((country, idx) => {
             const isSelected = country.code === selectedCode;
+            const primaryName = language === 'zh' ? country.name_zh : country.name;
+            const secondaryName = language === 'zh' ? country.name : country.name_zh;
+
             return (
               <tr
                 key={country.code}
+                className={`country-row ${isSelected ? 'is-selected' : ''}`}
                 onClick={() => onCountrySelect(country)}
-                className="border-b border-[#1e293b] cursor-pointer hover:bg-[#334155] transition-colors"
-                style={{
-                  borderLeft: isSelected ? '3px solid #3b82f6' : '3px solid transparent',
-                }}
               >
-                <td className="px-3 py-2.5 text-[#64748b]">{idx + 1}</td>
-                <td className="px-3 py-2.5">
-                  <div className="flex items-center gap-2">
-                    <span>{flagEmoji(country.code)}</span>
-                    <div>
-                      <div className="text-[#f8fafc] font-medium">{country.name}</div>
-                      <div className="text-xs text-[#64748b]">{country.name_zh}</div>
-                    </div>
-                  </div>
+                <td className="country-rank">{idx + 1}</td>
+
+                <td className="country-name-cell">
+                  <span className="country-flag">{flagEmoji(country.code)}</span>
+                  <span className="country-name-wrap">
+                    <span className="country-name">{primaryName}</span>
+                    <span className="country-name-zh">{secondaryName}</span>
+                  </span>
                 </td>
-                <td className="px-3 py-2.5 text-[#94a3b8]">{country.region}</td>
+
+                <td>{t(country.region)}</td>
+
                 {(['regulatory', 'rails', 'demand', 'coverage'] as const).map((key) => (
-                  <td key={key} className="px-3 py-2.5 text-center">
+                  <td key={key} className="country-score-cell">
                     <span
-                      className="inline-block w-7 py-0.5 rounded text-xs font-medium"
+                      className="country-score-badge"
                       style={{
-                        backgroundColor: scoreColor(country.scores[key]) + '25',
+                        backgroundColor: `${scoreColor(country.scores[key])}26`,
                         color: scoreColor(country.scores[key]),
                       }}
                     >
@@ -116,34 +135,30 @@ export function CountryTable({ countries, onCountrySelect, selectedCode }: Count
                     </span>
                   </td>
                 ))}
-                <td className="px-3 py-2.5">
-                  <div className="flex items-center gap-2">
-                    <div
-                      className="w-1 h-5 rounded-full"
+
+                <td>
+                  <div className="country-index-wrap">
+                    <span
+                      className="country-index-bar"
                       style={{ backgroundColor: getColorByScore(country.feasibilityIndex) }}
                     />
-                    <span
-                      className="font-bold"
-                      style={{ fontFamily: "'JetBrains Mono', monospace", color: '#22d3ee' }}
-                    >
-                      {country.feasibilityIndex}
-                    </span>
+                    <span className="country-index-value">{country.feasibilityIndex}</span>
                   </div>
                 </td>
-                <td className="px-3 py-2.5">
+
+                <td>
                   <span
-                    className="text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap"
+                    className="country-openfx-badge"
                     style={{
-                      backgroundColor: openfxBadgeColor(country.openfx.status) + '20',
+                      backgroundColor: `${openfxBadgeColor(country.openfx.status)}26`,
                       color: openfxBadgeColor(country.openfx.status),
                     }}
                   >
-                    {openfxLabel(country.openfx.status)}
+                    {t(openfxLabel(country.openfx.status))}
                   </span>
                 </td>
-                <td className="px-3 py-2.5 text-center">
-                  <span className="text-[#94a3b8] hover:text-[#f8fafc]" title="查看详情">👁️</span>
-                </td>
+
+                <td className="country-arrow-cell">{t('View')}</td>
               </tr>
             );
           })}

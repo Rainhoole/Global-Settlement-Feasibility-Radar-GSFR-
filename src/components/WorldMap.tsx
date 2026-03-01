@@ -1,4 +1,4 @@
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+﻿import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
 import { countriesByCode } from '../data';
 import { alpha2FromGeoId } from '../data/countryCodeMap';
 import { getOpenfxMapColor, getOpenfxMapStatus, hasOpenfxHoverAccent } from '../data/openfxMap';
@@ -34,7 +34,7 @@ export function WorldMap({ onCountryClick, onCountryHover, onMouseMove, filtered
               const countryData = alpha2 ? countriesByCode.get(alpha2) : undefined;
               const isFiltered = !filteredCodes || (countryData && filteredCodes.has(countryData.code));
               const mapStatus = getOpenfxMapStatus(alpha2);
-              const fillColor = isFiltered ? getOpenfxMapColor(mapStatus) : '#1E2535';
+              const fillColor = isFiltered ? getOpenfxMapColor(mapStatus) : 'var(--gsfr-map-muted)';
               const isSelected = countryData && countryData.code === selectedCode;
               const useHoverAccent = Boolean(countryData && isFiltered && hasOpenfxHoverAccent(mapStatus));
 
@@ -43,15 +43,15 @@ export function WorldMap({ onCountryClick, onCountryHover, onMouseMove, filtered
                   key={geo.rsmKey}
                   geography={geo}
                   fill={fillColor}
-                  stroke={isSelected ? '#3b82f6' : '#1E2535'}
-                  strokeWidth={isSelected ? 1.5 : 0.4}
+                  stroke={isSelected ? 'var(--rh-accent-color)' : 'var(--gsfr-map-stroke)'}
+                  strokeWidth={isSelected ? 1.6 : 0.4}
                   style={{
                     default: { outline: 'none' },
                     hover: {
                       outline: 'none',
-                      fill: useHoverAccent ? '#60a5fa' : fillColor,
-                      stroke: useHoverAccent ? '#ffffff' : '#1E2535',
-                      strokeWidth: useHoverAccent ? 1 : 0.4,
+                      fill: useHoverAccent ? 'var(--rh-accent-color)' : fillColor,
+                      stroke: useHoverAccent ? 'var(--rh-accent-color)' : 'var(--gsfr-map-stroke)',
+                      strokeWidth: useHoverAccent ? 1.1 : 0.4,
                       cursor: countryData && isFiltered ? 'pointer' : 'default',
                     },
                     pressed: { outline: 'none' },

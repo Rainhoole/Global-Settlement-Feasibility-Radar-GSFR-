@@ -1,27 +1,24 @@
-import { OPENFX_MAP_COLOR_BY_STATUS } from '../data/openfxMap';
+﻿import { OPENFX_MAP_COLOR_BY_STATUS } from '../data/openfxMap';
+import { useI18n } from '../i18n';
 
 const TIERS = [
-  { key: 'active', color: OPENFX_MAP_COLOR_BY_STATUS.active, label: 'Active (OpenFX 已上线)' },
+  { key: 'active', color: OPENFX_MAP_COLOR_BY_STATUS.active, label: 'Active' },
   { key: 'just_launched', color: OPENFX_MAP_COLOR_BY_STATUS.just_launched, label: 'Just Launched / Beta' },
-  { key: 'coming_soon', color: OPENFX_MAP_COLOR_BY_STATUS.coming_soon, label: 'Coming Soon (路线图)' },
-  { key: 'not_covered', color: OPENFX_MAP_COLOR_BY_STATUS.not_covered, label: '无覆盖 / 数据不足' },
+  { key: 'coming_soon', color: OPENFX_MAP_COLOR_BY_STATUS.coming_soon, label: 'Coming Soon' },
+  { key: 'not_covered', color: OPENFX_MAP_COLOR_BY_STATUS.not_covered, label: 'Not Covered' },
 ] as const;
 
 export function Legend() {
+  const { t } = useI18n();
+
   return (
-    <div
-      className="absolute bottom-4 left-4 z-10 rounded-xl p-3 text-xs backdrop-blur-sm"
-      style={{ backgroundColor: '#111827cc' }}
-    >
-      <div className="text-[#f8fafc] font-semibold mb-2">OpenFX Coverage</div>
-      <div className="space-y-1.5">
+    <div className="legend-panel">
+      <p className="legend-title">{t('OpenFX Coverage')}</p>
+      <div className="legend-list">
         {TIERS.map((tier) => (
-          <div key={tier.key} className="flex items-center gap-2">
-            <span
-              className="w-3 h-3 rounded-full shrink-0"
-              style={{ backgroundColor: tier.color }}
-            />
-            <span className="text-[#e2e8f0]">{tier.label}</span>
+          <div key={tier.key} className="legend-item">
+            <span className="legend-swatch" style={{ backgroundColor: tier.color }} />
+            <span className="legend-text">{t(tier.label)}</span>
           </div>
         ))}
       </div>
