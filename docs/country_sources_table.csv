@@ -1,0 +1,104 @@
+code,name,source_index,source_type,source_institution,source_url,source_last_verified
+AE,United Arab Emirates,1,regulation,Central Bank of the UAE,https://rulebook.centralbank.ae/en/rulebook/payment-token-services-regulation,2026-02-28
+AE,United Arab Emirates,2,payment_rail,Al Etihad Payments / CBUAE,https://www.centralbank.ae/en/our-operations/market-infrastructure-and-payments/,2026-02-28
+AE,United Arab Emirates,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+PH,Philippines,1,payments,Bangko Sentral ng Pilipinas,https://www.bsp.gov.ph/Pages/PaymentsAndSettlement/NPS.aspx,2026-02-28
+PH,Philippines,2,remittance,World Bank KNOMAD,https://www.knomad.org/data/remittances,2026-02-28
+PH,Philippines,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+MX,Mexico,1,payments,Banco de Mexico,https://www.banxico.org.mx/sistemas-de-pago/spei.html,2026-02-28
+MX,Mexico,2,regulation,Government of Mexico,https://www.diputados.gob.mx/LeyesBiblio/pdf/LRITF_090318.pdf,2026-02-28
+MX,Mexico,3,remittance,World Bank KNOMAD,https://www.knomad.org/data/remittances,2026-02-28
+BR,Brazil,1,payments,Banco Central do Brasil,https://www.bcb.gov.br/en/financialstability/pix_en,2026-02-28
+BR,Brazil,2,regulation,Government of Brazil,https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14478.htm,2026-02-28
+BR,Brazil,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+HK,Hong Kong,1,payments,Hong Kong Monetary Authority,https://www.hkma.gov.hk/eng/key-functions/international-financial-centre/financial-market-infrastructure/fps/,2026-02-28
+HK,Hong Kong,2,regulation,Securities and Futures Commission,https://www.sfc.hk/en/Regulatory-functions/Intermediaries/Virtual-asset-trading-platforms,2026-02-28
+HK,Hong Kong,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+SA,Saudi Arabia,1,payments,Saudi Central Bank,https://www.sama.gov.sa/en-US/PaymentAndSettlementSystems/Pages/default.aspx,2026-02-28
+SA,Saudi Arabia,2,regulation,Saudi Central Bank,https://www.sama.gov.sa/en-US/RegulatorySandbox/Pages/default.aspx,2026-02-28
+SA,Saudi Arabia,3,remittance,World Bank KNOMAD,https://www.knomad.org/data/remittances,2026-02-28
+US,United States,1,payments,Federal Reserve,https://www.federalreserve.gov/paymentsystems/fednow_about.htm,2026-02-28
+US,United States,2,compliance,FinCEN,https://www.fincen.gov/resources/statutes-and-regulations,2026-02-28
+US,United States,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+GB,United Kingdom,1,payments,Pay.UK,https://www.wearepay.uk/what-we-do/faster-payment-system/,2026-02-28
+GB,United Kingdom,2,regulation,Financial Conduct Authority,https://www.fca.org.uk/cryptoassets,2026-02-28
+GB,United Kingdom,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+AU,Australia,1,payments,Reserve Bank of Australia,https://www.rba.gov.au/payments-and-infrastructure/new-payments-platform/,2026-02-28
+AU,Australia,2,compliance,AUSTRAC,https://www.austrac.gov.au/business/industry-specific-guidance/digital-currency-exchange-providers,2026-02-28
+AU,Australia,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+SG,Singapore,1,regulation,Monetary Authority of Singapore,https://www.mas.gov.sg/regulation/acts/payment-services-act,2026-02-28
+SG,Singapore,2,payments,Monetary Authority of Singapore,https://www.mas.gov.sg/development/payments,2026-02-28
+SG,Singapore,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+CO,Colombia,1,regulation,Banco de la República,https://www.banrep.gov.co/,2026-02-28
+CO,Colombia,2,payments,ACH Colombia,https://www.achcolombia.com.co/,2026-02-28
+CO,Colombia,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+AR,Argentina,1,regulation,BCRA,https://www.bcra.gob.ar/,2026-02-28
+AR,Argentina,2,payments,BCRA,https://www.bcra.gob.ar/MediosPago/Medios_pago.asp,2026-02-28
+AR,Argentina,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+CL,Chile,1,regulation,Banco Central de Chile,https://www.bcentral.cl/,2026-02-28
+CL,Chile,2,payments,CMF Chile,https://www.cmfchile.cl/,2026-02-28
+CL,Chile,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+IN,India,1,regulation,Reserve Bank of India,https://www.rbi.org.in/,2026-02-28
+IN,India,2,payments,NPCI,https://www.npci.org.in/,2026-02-28
+IN,India,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+ID,Indonesia,1,regulation,Bank Indonesia,https://www.bi.go.id/,2026-02-28
+ID,Indonesia,2,payments,Bank Indonesia,https://www.bi.go.id/id/fungsi-utama/sistem-pembayaran/default.aspx,2026-02-28
+ID,Indonesia,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+ZA,South Africa,1,regulation,South African Reserve Bank,https://www.resbank.co.za/,2026-02-28
+ZA,South Africa,2,compliance,FSCA,https://www.fsca.co.za/,2026-02-28
+ZA,South Africa,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+TR,Turkey,1,regulation,CBRT,https://www.tcmb.gov.tr/,2026-02-28
+TR,Turkey,2,payments,CBRT,https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Core+Functions/Payment+Systems/,2026-02-28
+TR,Turkey,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+KR,South Korea,1,regulation,Bank of Korea,https://www.bok.or.kr/,2026-02-28
+KR,South Korea,2,payments,Bank of Korea,https://www.bok.or.kr/eng/main/contents.do?menuNo=400200,2026-02-28
+KR,South Korea,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+JP,Japan,1,regulation,FSA Japan,https://www.fsa.go.jp/en/,2026-02-28
+JP,Japan,2,payments,Bank of Japan,https://www.boj.or.jp/en/paym/outline/index.htm,2026-02-28
+JP,Japan,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+CA,Canada,1,regulation,Bank of Canada,https://www.bankofcanada.ca/,2026-02-28
+CA,Canada,2,compliance,FINTRAC,https://www.fintrac-canafe.gc.ca/,2026-02-28
+CA,Canada,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+CH,Switzerland,1,regulation,FINMA,https://www.finma.ch/en/,2026-02-28
+CH,Switzerland,2,payments,SIX Group,https://www.six-group.com/,2026-02-28
+CH,Switzerland,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+NZ,New Zealand,1,regulation,RBNZ,https://www.rbnz.govt.nz/,2026-02-28
+NZ,New Zealand,2,payments,RBNZ,https://www.rbnz.govt.nz/financial-stability/payment-and-settlement-systems,2026-02-28
+NZ,New Zealand,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+DE,Germany,1,regulation,BaFin,https://www.bafin.de/EN/,2026-02-28
+DE,Germany,2,payments,Deutsche Bundesbank,https://www.bundesbank.de/en/tasks/payment-systems,2026-02-28
+DE,Germany,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+FR,France,1,regulation,AMF France,https://www.amf-france.org/en,2026-02-28
+FR,France,2,payments,Banque de France,https://www.banque-france.fr/en/financial-stability/market-infrastructure-and-payment-systems,2026-02-28
+FR,France,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+NL,Netherlands,1,regulation,De Nederlandsche Bank,https://www.dnb.nl/en/,2026-02-28
+NL,Netherlands,2,payments,DNB,https://www.dnb.nl/en/payments/,2026-02-28
+NL,Netherlands,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+PA,Panama,1,regulation,SBP,https://www.superbancos.gob.pa/,2026-02-28
+PA,Panama,2,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+EG,Egypt,1,regulation,Central Bank of Egypt,https://www.cbe.org.eg/,2026-02-28
+EG,Egypt,2,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+MY,Malaysia,1,regulation,Bank Negara Malaysia,https://www.bnm.gov.my/,2026-02-28
+MY,Malaysia,2,payments,PayNet,https://www.paynet.my/,2026-02-28
+MY,Malaysia,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+NG,Nigeria,1,regulation,Central Bank of Nigeria,https://www.cbn.gov.ng/,2026-02-28
+NG,Nigeria,2,payments,NIBSS,https://www.nibss-plc.com.ng/,2026-02-28
+NG,Nigeria,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+KE,Kenya,1,regulation,Central Bank of Kenya,https://www.centralbank.go.ke/,2026-02-28
+KE,Kenya,2,payments,CBK,https://www.centralbank.go.ke/national-payments-system/,2026-02-28
+KE,Kenya,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+IT,Italy,1,regulation,Banca d'Italia,https://www.bancaditalia.it/,2026-02-28
+IT,Italy,2,regulation,CONSOB,https://www.consob.it/,2026-02-28
+IT,Italy,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+ES,Spain,1,regulation,Banco de Espa?a,https://www.bde.es/,2026-02-28
+ES,Spain,2,regulation,CNMV,https://www.cnmv.es/,2026-02-28
+ES,Spain,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+DK,Denmark,1,regulation,Danmarks Nationalbank,https://www.nationalbanken.dk/,2026-02-28
+DK,Denmark,2,regulation,Danish Financial Supervisory Authority,https://www.dfsa.dk/,2026-02-28
+DK,Denmark,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+SE,Sweden,1,regulation,Sveriges Riksbank,https://www.riksbank.se/,2026-02-28
+SE,Sweden,2,regulation,Finansinspektionen,https://www.fi.se/,2026-02-28
+SE,Sweden,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
+NO,Norway,1,regulation,Norges Bank,https://www.norges-bank.no/,2026-02-28
+NO,Norway,2,regulation,Finanstilsynet Norway,https://www.finanstilsynet.no/,2026-02-28
+NO,Norway,3,shipping,UNCTAD,https://unctadstat.unctad.org/,2026-02-28
