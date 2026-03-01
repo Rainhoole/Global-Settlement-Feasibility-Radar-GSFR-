@@ -1,275 +1,295 @@
-import { useState } from 'react';
+﻿import { useState, type CSSProperties, type ReactNode } from 'react';
 import type { CountryData } from '../types/country';
 import { flagEmoji, scoreColor, openfxBadgeColor, openfxLabel } from '../utils';
+import { useI18n } from '../i18n';
 
 interface DetailPanelProps {
   country: CountryData;
   onClose: () => void;
 }
 
+type StatusTone = 'positive' | 'warning' | 'negative' | 'neutral';
+
+function normalizeState(value: string | boolean | null | undefined): StatusTone {
+  if (value === true || value === 'yes' || value === 'legal' || value === 'open' || value === 'regulated') {
+    return 'positive';
+  }
+  if (value === 'partial' || value === 'gray' || value === 'allowed') {
+    return 'warning';
+  }
+  if (value === false || value === 'no' || value === 'prohibited' || value === 'strict' || value === 'restricted') {
+    return 'negative';
+  }
+  return 'neutral';
+}
+
+function stateLabel(value: string | boolean | null | undefined, trueText = 'Yes', falseText = 'No'): string {
+  if (typeof value === 'boolean') {
+    return value ? trueText : falseText;
+  }
+  if (value === null || value === undefined || value === 'unknown') {
+    return 'Unknown';
+  }
+
+  switch (value) {
+    case 'yes':
+      return 'Yes';
+    case 'no':
+      return 'No';
+    case 'partial':
+      return 'Partial';
+    case 'legal':
+      return 'Legal';
+    case 'gray':
+      return 'Gray Area';
+    case 'prohibited':
+      return 'Prohibited';
+    case 'open':
+      return 'Open';
+    case 'strict':
+      return 'Strict';
+    case 'regulated':
+      return 'Regulated';
+    case 'allowed':
+      return 'Allowed';
+    case 'restricted':
+      return 'Restricted';
+    default:
+      return value;
+  }
+}
+
 function ScoreBar({ label, value }: { label: string; value: number }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="w-24 text-sm text-[#94a3b8] shrink-0">{label}</span>
-      <div className="flex-1 h-2.5 rounded-full bg-[#0f172a] overflow-hidden">
-        <div
-          className="h-full rounded-full transition-all"
-          style={{ width: `${(value / 5) * 100}%`, backgroundColor: scoreColor(value) }}
-        />
+    <div className="detail-score-row">
+      <span className="detail-score-label">{label}</span>
+      <div className="detail-score-track">
+        <div className="detail-score-fill" style={{ width: `${(value / 5) * 100}%`, backgroundColor: scoreColor(value) }} />
       </div>
-      <span className="w-6 text-sm text-right font-medium text-[#e2e8f0]">{value}/5</span>
+      <span className="detail-score-value">{value}/5</span>
     </div>
   );
 }
 
-function StatusIcon({ value }: { value: string | boolean | null }) {
-  if (value === true || value === 'yes' || value === 'legal' || value === 'open' || value === 'regulated')
-    return <span className="text-[#22c55e]">✅</span>;
-  if (value === 'partial' || value === 'gray' || value === 'allowed')
-    return <span className="text-[#facc15]">🟡</span>;
-  if (value === false || value === 'no' || value === 'prohibited' || value === 'strict' || value === 'restricted')
-    return <span className="text-[#ef4444]">❌</span>;
-  return <span className="text-[#6b7280]">❓</span>;
-}
+function FieldRow({
+  label,
+  value,
+  raw,
+}: {
+  label: string;
+  value: string;
+  raw?: string | boolean | null;
+}) {
+  const { t } = useI18n();
+  const tone = raw === undefined ? 'neutral' : normalizeState(raw);
 
-function FieldRow({ label, value, raw }: { label: string; value: string; raw?: string | boolean | null }) {
   return (
-    <div className="flex items-start justify-between gap-2 py-1.5">
-      <span className="text-sm text-[#94a3b8]">{label}</span>
-      <span className="text-sm text-[#e2e8f0] text-right flex items-center gap-1.5">
-        {raw !== undefined && <StatusIcon value={raw} />}
-        {value}
-      </span>
+    <div className="detail-field-row">
+      <span className="detail-field-label">{t(label)}</span>
+      <span className={`detail-field-value tone-${tone}`}>{t(value)}</span>
     </div>
   );
 }
 
 function ModuleCard({
   title,
-  borderColor,
+  accent,
   children,
   sourceUrl,
 }: {
   title: string;
-  borderColor: string;
-  children: React.ReactNode;
+  accent: string;
+  children: ReactNode;
   sourceUrl?: string;
 }) {
+  const { t } = useI18n();
   const [showSource, setShowSource] = useState(false);
+  const style = { '--module-accent': accent } as CSSProperties;
 
   return (
-    <div
-      className="rounded-xl p-4"
-      style={{ backgroundColor: '#1e293b', borderLeft: `3px solid ${borderColor}` }}
-    >
-      <h4 className="text-sm font-semibold text-[#f8fafc] mb-3">{title}</h4>
-      {children}
-      {sourceUrl && (
-        <div className="mt-2 border-t border-[#334155] pt-2">
-          <button
-            onClick={() => setShowSource(!showSource)}
-            className="text-xs text-[#60a5fa] hover:underline cursor-pointer bg-transparent border-none p-0"
-          >
-            📎 来源 {showSource ? '▾' : '›'}
+    <section className="detail-module" style={style}>
+      <div className="detail-module-head">
+        <h4>{t(title)}</h4>
+        {sourceUrl && (
+          <button type="button" className="detail-module-source-btn" onClick={() => setShowSource((v) => !v)}>
+            {t('Source')}
           </button>
-          {showSource && (
-            <a
-              href={sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-xs text-[#60a5fa] hover:underline mt-1 break-all"
-            >
-              {sourceUrl}
-            </a>
-          )}
-        </div>
+        )}
+      </div>
+
+      <div className="detail-module-body">{children}</div>
+
+      {showSource && sourceUrl && (
+        <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="detail-module-source-link">
+          {sourceUrl}
+        </a>
       )}
-    </div>
+    </section>
   );
 }
 
-function RiskBadge({ level }: { level: string }) {
-  const colors: Record<string, { text: string; bg: string }> = {
-    low: { text: '#22c55e', bg: '#22c55e15' },
-    medium: { text: '#facc15', bg: '#facc1515' },
-    high: { text: '#f97316', bg: '#f9731615' },
-    critical: { text: '#ef4444', bg: '#ef444415' },
-  };
-  const c = colors[level] || colors.medium;
-  const label = level === 'low' ? '🟢 低' : level === 'medium' ? '🟡 中' : level === 'high' ? '🟠 高' : '🔴 严重';
-  return (
-    <span className="text-xs px-2 py-0.5 rounded" style={{ color: c.text, backgroundColor: c.bg }}>
-      {label}
-    </span>
-  );
+function RiskBadge({ level }: { level: CountryData['sanctions']['riskLevel'] }) {
+  const { t } = useI18n();
+  return <span className={`risk-badge risk-${level}`}>{t(level.toUpperCase())}</span>;
 }
 
 export function DetailPanel({ country, onClose }: DetailPanelProps) {
+  const { language, t } = useI18n();
+
   return (
-    <div
-      className="fixed top-0 right-0 h-full z-40 overflow-y-auto animate-[slideIn_300ms_ease-out]"
-      style={{ width: 480, backgroundColor: '#111827' }}
-    >
-      {/* Top bar */}
-      <div className="sticky top-0 z-10 flex items-center justify-end p-4" style={{ backgroundColor: '#111827' }}>
-        <button
-          onClick={onClose}
-          className="w-8 h-8 flex items-center justify-center rounded-lg text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#334155] cursor-pointer bg-transparent border-none text-lg"
-        >
-          ✕
+    <aside className="detail-panel">
+      <div className="detail-panel-top">
+        <button type="button" className="detail-close-btn" onClick={onClose}>
+          {t('Close')}
         </button>
       </div>
 
-      <div className="px-6 pb-6 space-y-5">
-        {/* Country header */}
-        <div>
-          <h2 className="text-xl font-bold text-[#f8fafc]">
-            {flagEmoji(country.code)} {country.name}
+      <div className="detail-panel-body">
+        <header className="detail-country-head">
+          <h2>
+            {flagEmoji(country.code)} {language === 'zh' ? country.name_zh : country.name}
           </h2>
-          <p className="text-sm text-[#94a3b8]">{country.name_zh}</p>
-        </div>
+          <p>{language === 'zh' ? country.name : country.name_zh}</p>
+        </header>
 
-        {/* Feasibility Index */}
-        <div className="rounded-xl p-4" style={{ backgroundColor: '#1e293b' }}>
-          <div className="text-xs text-[#94a3b8] uppercase tracking-wider mb-1">Feasibility Index</div>
-          <div className="flex items-end gap-3">
-            <span
-              className="text-5xl font-bold leading-none"
-              style={{ fontFamily: "'JetBrains Mono', monospace", color: '#22d3ee' }}
-            >
-              {country.feasibilityIndex}
-            </span>
-            <div className="flex-1 pb-2">
-              <div className="h-3 rounded-full bg-[#0f172a] overflow-hidden">
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${country.feasibilityIndex}%`, backgroundColor: '#22d3ee' }}
-                />
-              </div>
-              <div className="text-xs text-right text-[#94a3b8] mt-0.5">/100</div>
+        <section className="detail-index-card">
+          <span className="detail-index-label">{t('Feasibility Index')}</span>
+          <div className="detail-index-row">
+            <strong>{country.feasibilityIndex}</strong>
+            <div className="detail-index-track">
+              <span style={{ width: `${country.feasibilityIndex}%` }} />
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Status tags */}
-        <div className="flex flex-wrap items-center gap-2">
+        <section className="detail-tag-row">
           <span
-            className="text-xs font-medium px-2.5 py-1 rounded-md"
+            className="detail-tag"
             style={{
-              backgroundColor: openfxBadgeColor(country.openfx.status) + '20',
+              backgroundColor: `${openfxBadgeColor(country.openfx.status)}26`,
               color: openfxBadgeColor(country.openfx.status),
             }}
           >
-            OpenFX: {openfxLabel(country.openfx.status)}
+            OpenFX: {t(openfxLabel(country.openfx.status))}
           </span>
-          {country.openfx.currency && (
-            <span className="text-xs px-2.5 py-1 rounded-md bg-[#334155] text-[#e2e8f0]">
-              {country.openfx.currency}
-            </span>
+          <span className="detail-tag">{t(country.region)}</span>
+          {country.openfx.currency && <span className="detail-tag">{country.openfx.currency}</span>}
+          {country.openfx.eta && <span className="detail-tag">ETA: {country.openfx.eta}</span>}
+        </section>
+
+        <section className="detail-score-list">
+          <ScoreBar label={t('Regulatory')} value={country.scores.regulatory} />
+          <ScoreBar label={t('Rails')} value={country.scores.rails} />
+          <ScoreBar label={t('Demand')} value={country.scores.demand} />
+          <ScoreBar label={t('Coverage')} value={country.scores.coverage} />
+        </section>
+
+        <ModuleCard title="FX Regime" accent="#4F8CFF" sourceUrl={country.fxRegime.sourceUrl}>
+          <FieldRow
+            label="Current Account Convertibility"
+            raw={country.fxRegime.currentAccountConvertible}
+            value={stateLabel(country.fxRegime.currentAccountConvertible)}
+          />
+          <FieldRow
+            label="Capital Account Control"
+            raw={country.fxRegime.capitalControl}
+            value={stateLabel(country.fxRegime.capitalControl)}
+          />
+          <FieldRow label="Cross-border Restriction" value={country.fxRegime.crossBorderRestriction} />
+          <FieldRow
+            label="Forced Local Clearing"
+            raw={country.fxRegime.forcedLocalClearing}
+            value={stateLabel(country.fxRegime.forcedLocalClearing)}
+          />
+          <FieldRow label="Regulator" value={country.fxRegime.regulatorBody} />
+          <FieldRow label="Last Updated" value={country.fxRegime.lastUpdated} />
+        </ModuleCard>
+
+        <ModuleCard title="Digital Asset Policy" accent="#A888F7" sourceUrl={country.digitalAsset.sourceUrl}>
+          <FieldRow
+            label="Legal Status"
+            raw={country.digitalAsset.legalStatus}
+            value={stateLabel(country.digitalAsset.legalStatus)}
+          />
+          <FieldRow
+            label="Stablecoin"
+            raw={country.digitalAsset.stablecoinStatus}
+            value={stateLabel(country.digitalAsset.stablecoinStatus)}
+          />
+          <FieldRow label="Bank Participation" value={country.digitalAsset.bankCryptoPolicy} />
+          <FieldRow
+            label="Dedicated Framework"
+            raw={country.digitalAsset.hasFramework}
+            value={stateLabel(country.digitalAsset.hasFramework)}
+          />
+        </ModuleCard>
+
+        <ModuleCard title="Banking Infrastructure" accent="#5FD7D0" sourceUrl={country.infrastructure.centralBankUrl}>
+          <FieldRow
+            label="SWIFT Member"
+            raw={country.infrastructure.swiftMember}
+            value={stateLabel(country.infrastructure.swiftMember)}
+          />
+          <FieldRow
+            label="RTGS"
+            raw={country.infrastructure.hasRTGS}
+            value={country.infrastructure.rtgsName ?? stateLabel(country.infrastructure.hasRTGS)}
+          />
+          <FieldRow
+            label="Foreign Banks"
+            raw={country.infrastructure.hasForeignBanks}
+            value={stateLabel(country.infrastructure.hasForeignBanks)}
+          />
+          <FieldRow label="Primary Clearing Currency" value={country.infrastructure.primaryClearingCurrency.join(', ')} />
+        </ModuleCard>
+
+        <ModuleCard title="Sanctions & Compliance" accent="#F59B4A">
+          <FieldRow label="OFAC Listed" raw={country.sanctions.ofacListed} value={stateLabel(country.sanctions.ofacListed)} />
+          <FieldRow label="EU Restricted" raw={country.sanctions.euRestricted} value={stateLabel(country.sanctions.euRestricted)} />
+          <FieldRow label="UK Restricted" raw={country.sanctions.ukRestricted} value={stateLabel(country.sanctions.ukRestricted)} />
+          <div className="detail-field-row">
+            <span className="detail-field-label">{t('Risk Level')}</span>
+            <RiskBadge level={country.sanctions.riskLevel} />
+          </div>
+        </ModuleCard>
+
+        <ModuleCard title="Shipping Signals" accent="#62CC6A" sourceUrl={country.shipping.unctadSource}>
+          {country.shipping.portThroughputTEU ? (
+            <FieldRow
+              label="Port Throughput"
+              value={`${(country.shipping.portThroughputTEU / 1_000_000).toFixed(1)}M TEU / year`}
+            />
+          ) : null}
+
+          {country.shipping.shippingRank ? (
+            <FieldRow label="Global Rank" value={`#${country.shipping.shippingRank}`} />
+          ) : null}
+
+          {!country.shipping.portThroughputTEU && !country.shipping.shippingRank && (
+            <FieldRow label="Shipping Data" value="No structured value" />
           )}
-          <span className="text-xs px-2.5 py-1 rounded-md bg-[#334155] text-[#e2e8f0]">
-            {country.region}
-          </span>
-          {country.openfx.eta && (
-            <span className="text-xs px-2.5 py-1 rounded-md bg-[#334155] text-[#94a3b8]">
-              ETA: {country.openfx.eta}
-            </span>
-          )}
-        </div>
-
-        {/* Score bars */}
-        <div className="space-y-2.5">
-          <ScoreBar label="监管开放度" value={country.scores.regulatory} />
-          <ScoreBar label="清算基础设施" value={country.scores.rails} />
-          <ScoreBar label="跨境需求规模" value={country.scores.demand} />
-          <ScoreBar label="供应商覆盖度" value={country.scores.coverage} />
-        </div>
-
-        {/* Module 1: FX Regime */}
-        <ModuleCard title="外汇制度" borderColor="#3b82f6" sourceUrl={country.fxRegime.sourceUrl}>
-          <div className="divide-y divide-[#334155]">
-            <FieldRow label="贸易外汇可自由兑换" value={country.fxRegime.currentAccountConvertible === 'yes' ? '是' : country.fxRegime.currentAccountConvertible === 'partial' ? '部分' : '否'} raw={country.fxRegime.currentAccountConvertible} />
-            <FieldRow label="资本项目开放程度" value={country.fxRegime.capitalControl === 'open' ? '开放' : country.fxRegime.capitalControl === 'partial' ? '部分开放' : '严格管制'} raw={country.fxRegime.capitalControl} />
-            <FieldRow label="跨境限制" value={country.fxRegime.crossBorderRestriction} />
-            <FieldRow label="强制本地清算" value={country.fxRegime.forcedLocalClearing === true ? '是' : country.fxRegime.forcedLocalClearing === false ? '否' : '未确认'} raw={country.fxRegime.forcedLocalClearing} />
-            <FieldRow label="监管机构" value={country.fxRegime.regulatorBody} />
-          </div>
         </ModuleCard>
 
-        {/* Module 2: Digital Asset */}
-        <ModuleCard title="数字资产监管" borderColor="#a78bfa" sourceUrl={country.digitalAsset.sourceUrl}>
-          <div className="divide-y divide-[#334155]">
-            <FieldRow label="数字资产合法性" value={country.digitalAsset.legalStatus === 'legal' ? '合法' : country.digitalAsset.legalStatus === 'gray' ? '灰色地带' : '禁止'} raw={country.digitalAsset.legalStatus} />
-            <FieldRow label="稳定币监管状态" value={country.digitalAsset.stablecoinStatus} raw={country.digitalAsset.stablecoinStatus} />
-            <FieldRow label="银行参与加密业务" value={country.digitalAsset.bankCryptoPolicy} />
-            <FieldRow label="专门监管框架" value={country.digitalAsset.hasFramework ? '有' : country.digitalAsset.hasFramework === false ? '无' : '未确认'} raw={country.digitalAsset.hasFramework} />
-          </div>
-        </ModuleCard>
-
-        {/* Module 3: Infrastructure */}
-        <ModuleCard title="银行与清算基础设施" borderColor="#22d3ee" sourceUrl={country.infrastructure.centralBankUrl}>
-          <div className="divide-y divide-[#334155]">
-            <FieldRow label="SWIFT 成员" value={country.infrastructure.swiftMember ? '是' : '否'} raw={country.infrastructure.swiftMember} />
-            <FieldRow label="实时支付系统" value={country.infrastructure.rtgsName || (country.infrastructure.hasRTGS ? '有' : '无')} raw={country.infrastructure.hasRTGS} />
-            <FieldRow label="外资银行运营" value={country.infrastructure.hasForeignBanks ? '是' : '否'} raw={country.infrastructure.hasForeignBanks} />
-            <FieldRow label="主要清算货币" value={country.infrastructure.primaryClearingCurrency.join(', ')} />
-          </div>
-        </ModuleCard>
-
-        {/* Module 4: Sanctions */}
-        <ModuleCard title="制裁与合规风险" borderColor="#f97316">
-          <div className="divide-y divide-[#334155]">
-            <FieldRow label="OFAC 制裁" value={country.sanctions.ofacListed ? '是' : '否'} raw={!country.sanctions.ofacListed} />
-            <FieldRow label="欧盟金融限制" value={country.sanctions.euRestricted ? '是' : '否'} raw={!country.sanctions.euRestricted} />
-            <FieldRow label="英国制裁" value={country.sanctions.ukRestricted ? '是' : '否'} raw={!country.sanctions.ukRestricted} />
-            <div className="flex items-center justify-between py-1.5">
-              <span className="text-sm text-[#94a3b8]">风险级别</span>
-              <RiskBadge level={country.sanctions.riskLevel} />
-            </div>
-          </div>
-        </ModuleCard>
-
-        {/* Module 5: Shipping */}
-        <ModuleCard title="航运规模指标" borderColor="#22c55e" sourceUrl={country.shipping.unctadSource}>
-          <div className="divide-y divide-[#334155]">
-            {country.shipping.portThroughputTEU && (
-              <FieldRow
-                label="港口吞吐量"
-                value={`${(country.shipping.portThroughputTEU / 1000000).toFixed(1)} 百万 TEU/年`}
-              />
-            )}
-            {country.shipping.shippingRank && (
-              <FieldRow label="全球排名" value={`#${country.shipping.shippingRank}`} />
-            )}
-          </div>
-        </ModuleCard>
-
-        {/* Sources */}
         {country.sources.length > 0 && (
-          <div className="rounded-xl p-4" style={{ backgroundColor: '#1e293b' }}>
-            <h4 className="text-sm font-semibold text-[#f8fafc] mb-3">数据来源汇总</h4>
-            <div className="space-y-2">
-              {country.sources.map((src, i) => (
-                <div key={i} className="flex items-start gap-2 text-xs">
-                  <span className="text-[#94a3b8]">•</span>
-                  <div>
-                    <span className="text-[#e2e8f0]">{src.institution}</span>
-                    <span className="text-[#64748b] ml-1">({src.lastVerified})</span>
-                    <a
-                      href={src.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-[#60a5fa] hover:underline break-all"
-                    >
-                      {src.url}
-                    </a>
-                  </div>
-                </div>
+          <section className="detail-module" style={{ '--module-accent': '#8B8B8B' } as CSSProperties}>
+            <div className="detail-module-head">
+              <h4>{t('Sources')}</h4>
+            </div>
+            <div className="detail-source-list">
+              {country.sources.map((src, index) => (
+                <article key={`${src.url}-${index}`} className="detail-source-item">
+                  <p>
+                    {t(src.institution)} · {src.lastVerified}
+                  </p>
+                  <a href={src.url} target="_blank" rel="noopener noreferrer">
+                    {src.url}
+                  </a>
+                </article>
               ))}
             </div>
-          </div>
+          </section>
         )}
       </div>
-    </div>
+    </aside>
   );
 }

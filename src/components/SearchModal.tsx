@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useMemo, useRef, useState } from 'react';
 import { countries } from '../data';
 import type { CountryData } from '../types/country';
 import { flagEmoji, openfxBadgeColor, openfxLabel } from '../utils';
+import { useI18n } from '../i18n';
 
 interface SearchModalProps {
   onSelect: (country: CountryData) => void;
@@ -9,6 +10,7 @@ interface SearchModalProps {
 }
 
 export function SearchModal({ onSelect, onClose }: SearchModalProps) {
+  const { language, t } = useI18n();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -18,78 +20,78 @@ export function SearchModal({ onSelect, onClose }: SearchModalProps) {
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+      }
     };
+
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const results = query.trim()
-    ? countries.filter((c) => {
-        const q = query.toLowerCase();
-        return (
-          c.name.toLowerCase().includes(q) ||
-          c.name_zh.includes(q) ||
-          c.code.toLowerCase().includes(q)
-        );
-      })
-    : countries.slice(0, 10);
+  const results = useMemo(() => {
+    if (!query.trim()) {
+      return countries.slice(0, 12);
+    }
+
+    const q = query.toLowerCase();
+    return countries.filter((country) => {
+      return (
+        country.name.toLowerCase().includes(q) ||
+        country.name_zh.toLowerCase().includes(q) ||
+        country.code.toLowerCase().includes(q)
+      );
+    });
+  }, [query]);
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh]"
-      style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
-      onClick={onClose}
-    >
-      <div
-        className="w-full max-w-lg rounded-xl shadow-2xl overflow-hidden animate-[fadeIn_200ms_ease-out]"
-        style={{ backgroundColor: '#1e293b' }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-[#334155]">
-          <span className="text-[#94a3b8]">🔍</span>
+    <div className="search-overlay" onClick={onClose}>
+      <div className="search-modal" onClick={(e) => e.stopPropagation()}>
+        <div className="search-head">
           <input
             ref={inputRef}
             type="text"
-            placeholder="搜索国家..."
+            placeholder={t('Search by country name / code')}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="flex-1 bg-transparent text-sm text-[#f8fafc] placeholder-[#64748b] outline-none border-none"
+            className="search-input"
           />
-          <kbd className="text-[10px] text-[#64748b] border border-[#334155] rounded px-1.5 py-0.5">ESC</kbd>
+          <kbd className="search-kbd">ESC</kbd>
         </div>
-        <div className="max-h-80 overflow-y-auto">
+
+        <div className="search-list">
           {results.map((country) => (
             <button
               key={country.code}
-              onClick={() => { onSelect(country); onClose(); }}
-              className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-[#334155] cursor-pointer bg-transparent border-none"
+              type="button"
+              className="search-item"
+              onClick={() => {
+                onSelect(country);
+                onClose();
+              }}
             >
-              <span className="text-lg">{flagEmoji(country.code)}</span>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm text-[#f8fafc] truncate">{country.name}</div>
-                <div className="text-xs text-[#94a3b8]">{country.name_zh}</div>
-              </div>
-              <span
-                className="text-sm font-bold shrink-0"
-                style={{ fontFamily: "'JetBrains Mono', monospace", color: '#22d3ee' }}
-              >
-                {country.feasibilityIndex}
+              <span className="search-flag">{flagEmoji(country.code)}</span>
+
+              <span className="search-country">
+                <span className="search-country-name">{language === 'zh' ? country.name_zh : country.name}</span>
+                <span className="search-country-sub">{language === 'zh' ? country.name : country.name_zh}</span>
               </span>
+
+              <span className="search-index">{country.feasibilityIndex}</span>
+
               <span
-                className="text-[10px] px-1.5 py-0.5 rounded shrink-0"
+                className="search-openfx"
                 style={{
-                  backgroundColor: openfxBadgeColor(country.openfx.status) + '20',
+                  backgroundColor: `${openfxBadgeColor(country.openfx.status)}26`,
                   color: openfxBadgeColor(country.openfx.status),
                 }}
               >
-                {openfxLabel(country.openfx.status)}
+                {t(openfxLabel(country.openfx.status))}
               </span>
             </button>
           ))}
-          {results.length === 0 && (
-            <div className="px-4 py-6 text-center text-sm text-[#64748b]">没有匹配的国家</div>
-          )}
+
+          {results.length === 0 && <p className="search-empty">{t('No matching countries.')}</p>}
         </div>
       </div>
     </div>

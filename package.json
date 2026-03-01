@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:github": "tsc -b && vite build --base=/Global-Settlement-Feasibility-Radar-GSFR-/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "i18n:build:zh": "node scripts/build-zh-translations.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",
