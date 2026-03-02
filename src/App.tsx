@@ -120,7 +120,16 @@ function App() {
 
           <footer className="rh-footer gsfr-footer">
             <div className="rh-footer__main">
-              <span>{t('Rainhoole GSFR')}</span>
+              <span>
+                Powered by{' '}
+                <a
+                  href="https://rainhoole.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Rainhoole Luo
+                </a>
+              </span>
               <span>
                 <span className="rh-bullet" />
                 2026
