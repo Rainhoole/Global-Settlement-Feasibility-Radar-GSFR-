@@ -45,7 +45,7 @@ export function Tooltip({ country, x, y }: TooltipProps) {
             {flagEmoji(country.code)} {primaryName}
           </p>
           <p className="gsfr-tooltip-country-sub">{secondaryName}</p>
-          {isN8nPassed(country.code) && <p className="gsfr-tooltip-n8n">{t('N8N Passed')}</p>}
+          {isN8nPassed(country.code) && <p className="gsfr-tooltip-n8n">{t('Source Review')}</p>}
         </div>
 
         <div className="gsfr-tooltip-index">

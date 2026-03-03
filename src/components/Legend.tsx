@@ -22,7 +22,12 @@ export function Legend() {
           </div>
         ))}
       </div>
-      <p className="legend-note">{t('N8N Passed countries use highlighted borders on the map.')}</p>
+      <p
+        className="legend-note"
+        title={t('Countries with incomplete source evidence are temporarily highlighted on the map.')}
+      >
+        {t('Border: Source Review')}
+      </p>
     </div>
   );
 }

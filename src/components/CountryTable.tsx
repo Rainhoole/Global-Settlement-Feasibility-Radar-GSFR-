@@ -118,7 +118,7 @@ export function CountryTable({ countries, onCountrySelect, selectedCode }: Count
                   <span className="country-name-wrap">
                     <span className="country-name">{primaryName}</span>
                     <span className="country-name-zh">{secondaryName}</span>
-                    {isN8nPassed(country.code) && <span className="country-n8n-badge">{t('N8N Passed')}</span>}
+                    {isN8nPassed(country.code) && <span className="country-n8n-badge">{t('Source Review')}</span>}
                   </span>
                 </td>
 

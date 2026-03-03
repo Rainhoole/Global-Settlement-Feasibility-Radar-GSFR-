@@ -173,7 +173,7 @@ export function DetailPanel({ country, onClose }: DetailPanelProps) {
           >
             OpenFX: {t(openfxLabel(country.openfx.status))}
           </span>
-          {isN8nPassed(country.code) && <span className="detail-tag detail-tag-n8n">{t('N8N Passed')}</span>}
+          {isN8nPassed(country.code) && <span className="detail-tag detail-tag-n8n">{t('Source Review')}</span>}
           <span className="detail-tag">{t(country.region)}</span>
           {country.openfx.currency && <span className="detail-tag">{country.openfx.currency}</span>}
           {country.openfx.eta && <span className="detail-tag">ETA: {country.openfx.eta}</span>}

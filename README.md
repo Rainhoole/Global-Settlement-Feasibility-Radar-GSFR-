@@ -1,109 +1,111 @@
 # Global Settlement Feasibility Radar (GSFR)
 
-全球跨境结算可行性雷达。项目以世界地图和数据表形式展示各国家/地区在跨境结算场景下的可行性评估、OpenFX 覆盖状态、监管与基础设施信息。
+Interactive world map and country table for cross-border settlement feasibility.
 
-## 当前版本
+## Snapshot
 
-- 当前稳定基线：`V1`
-- 版本号：`1.0.0`
-- Git 标签：`v1.0.0`
-- 线上地址：`https://rainhoole.com/Global-Settlement-Feasibility-Radar-GSFR-/`
+- Frontend: React + TypeScript + Vite
+- Dataset: `142` countries (as of 2026-03-03)
+- Views: map + table + searchable country detail panel
+- Main source of runtime data: `src/data/countries.json`
 
-> 后续 `V2` 建议从 `v1.0.0` 标签创建分支开始开发，确保 V1 可随时回溯。
+## OpenFX Status Policy
 
-## 核心功能
+OpenFX map color is data-driven from each country's `openfx.status`.
 
-- 世界地图可视化（按 OpenFX 覆盖状态着色）
-- 地区、可行性分数、OpenFX 状态多维筛选
-- 地图/表格双视图切换
-- 国家搜索（`Ctrl+K / Cmd+K`）
-- 国家详情侧栏（监管、数字资产、清算基础设施、航运等）
+Current status buckets:
 
-## 技术栈
+- `active`
+- `just_launched`
+- `coming_soon`
+- `not_covered`
 
-- `React 18`
-- `TypeScript`
-- `Vite`
-- `Tailwind CSS`
-- `react-simple-maps` + `d3-geo`
-- `GitHub Actions` + `GitHub Pages`
+Policy currently applied in data:
 
-## 项目结构
+- Active (explicit): `AE, AU, BR, GB, MX, US`
+- Just launched: `PH, CO, AR`
+- Coming soon: `CL, CA, HK, SG, ID, NZ, CH, IN, TR, SA, ZA, KR, DK, JP, NO, SE`
+- Eurozone countries are also set to `active` with `EUR`
+- All others default to `not_covered`
+
+## Source Review Marker
+
+Some countries are rendered with a highlighted border and a `Source Review` badge/tag.
+
+- UI wording is intentionally neutral (no pipeline/provider wording)
+- Meaning: source evidence for this country needs review or follow-up
+
+## Project Structure
 
 ```text
 app/
 ├─ src/
-│  ├─ components/         # 地图、表格、筛选、详情面板等组件
-│  ├─ data/               # 前端运行时数据（countries.json 等）
-│  ├─ types/              # 类型定义
-│  └─ App.tsx             # 主入口页面逻辑
-├─ docs/                  # 研究与规划文档、CSV 数据表
-├─ .github/workflows/     # GitHub Pages 自动部署
+│  ├─ components/
+│  ├─ data/
+│  │  ├─ countries.json
+│  │  ├─ countries.full.json
+│  │  ├─ countries.launch100.json
+│  │  └─ openfxMap.ts
+│  ├─ types/
+│  ├─ i18n.tsx
+│  ├─ App.tsx
+│  └─ index.css
+├─ scripts/
+├─ public/
 ├─ package.json
 └─ vite.config.ts
 ```
 
-## 本地开发
+## Local Development
 
-### 1) 安装依赖
+Install dependencies:
 
 ```bash
 npm ci
 ```
 
-### 2) 启动开发环境
+Start dev server:
 
 ```bash
 npm run dev
 ```
 
-### 3) 构建
+Build:
 
 ```bash
 npm run build
 ```
 
-### 4) GitHub Pages 构建（带子路径 base）
+Preview build locally:
+
+```bash
+npm run preview
+```
+
+Build for GitHub Pages (repo sub-path base):
 
 ```bash
 npm run build:github
 ```
 
-## 部署说明（GitHub Pages）
-
-已配置自动部署工作流：`.github/workflows/deploy-pages.yml`
-
-- 触发条件：推送到 `master`
-- 构建命令：`npm run build:github`
-- 发布目录：`dist`
-
-> 本项目部署在子路径 `/Global-Settlement-Feasibility-Radar-GSFR-/`，必须使用 `build:github`，否则会出现静态资源 404。
-
-## 数据说明
-
-- 前端页面当前直接读取：`src/data/countries.json`
-- 研究数据和资料维护在：`docs/*.csv`
-
-当前 `docs/*.csv` 与 `src/data/countries.json` 之间仍是“人工同步”关系，尚未自动化。
-
-## V2 开发建议
-
-### 建议流程
-
-1. 从 V1 标签创建开发分支：
+Build zh translation bundle:
 
 ```bash
-git checkout -b v2-dev v1.0.0
+npm run i18n:build:zh
 ```
 
-2. 在 `v2-dev` 开发与验证，稳定后再合并到主分支。
-3. V2 发布时打新标签（如 `v2.0.0`）。
+## Deployment
 
-### 建议优先项
+Repository is configured for GitHub Pages via workflow in `.github/workflows/`.
 
-- 建立 `docs/*.csv -> src/data/countries.json` 自动转换脚本
-- 统一中文编码，清理历史乱码字段
-- 补充基础测试（数据完整性检查、关键组件渲染）
-- 增加变更日志（`CHANGELOG.md`）
+- Build output: `dist/`
+- If deploying to repo sub-path, use `npm run build:github`
 
+## Data Quality
+
+Recommended checks before release:
+
+1. Build frontend: `npm run build`
+2. Validate country data in the workspace root scripts (if available)
+3. Spot-check map legend and `Source Review` markers
 
