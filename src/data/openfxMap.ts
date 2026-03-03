@@ -1,4 +1,5 @@
 import type { CountryData } from '../types/country';
+import { countriesByCode } from './index';
 
 export type OpenfxStatus = CountryData['openfx']['status'];
 
@@ -9,16 +10,6 @@ export const OPENFX_MAP_COLOR_BY_STATUS: Record<OpenfxStatus, string> = {
   not_covered: '#1E2535',
 };
 
-const ACTIVE_CODES = new Set([
-  'AE', 'AU', 'BR', 'DE', 'FR', 'IT', 'ES', 'NL', 'MX', 'GB', 'US',
-]);
-
-const JUST_LAUNCHED_CODES = new Set(['PH', 'CO', 'AR']);
-
-const COMING_SOON_CODES = new Set([
-  'CL', 'CA', 'HK', 'SG', 'ID', 'NZ', 'CH', 'IN', 'TR', 'SA', 'ZA', 'KR', 'DK', 'JP', 'SE', 'NO',
-]);
-
 export function getOpenfxMapStatus(
   alpha2: string | undefined,
 ): OpenfxStatus {
@@ -27,16 +18,7 @@ export function getOpenfxMapStatus(
   }
 
   const code = alpha2.toUpperCase();
-  if (ACTIVE_CODES.has(code)) {
-    return 'active';
-  }
-  if (JUST_LAUNCHED_CODES.has(code)) {
-    return 'just_launched';
-  }
-  if (COMING_SOON_CODES.has(code)) {
-    return 'coming_soon';
-  }
-  return 'not_covered';
+  return countriesByCode.get(code)?.openfx?.status ?? 'not_covered';
 }
 
 export function getOpenfxMapColor(status: OpenfxStatus): string {

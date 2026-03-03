@@ -22,6 +22,7 @@ export function Legend() {
           </div>
         ))}
       </div>
+      <p className="legend-note">{t('N8N Passed countries use highlighted borders on the map.')}</p>
     </div>
   );
 }

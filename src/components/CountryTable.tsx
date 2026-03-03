@@ -3,6 +3,7 @@ import type { CountryData } from '../types/country';
 import { getColorByScore } from '../data';
 import { flagEmoji, openfxBadgeColor, openfxLabel, scoreColor } from '../utils';
 import { useI18n } from '../i18n';
+import { isN8nPassed } from '../data/n8nPassedCodes';
 
 type SortKey =
   | 'name'
@@ -117,6 +118,7 @@ export function CountryTable({ countries, onCountrySelect, selectedCode }: Count
                   <span className="country-name-wrap">
                     <span className="country-name">{primaryName}</span>
                     <span className="country-name-zh">{secondaryName}</span>
+                    {isN8nPassed(country.code) && <span className="country-n8n-badge">{t('N8N Passed')}</span>}
                   </span>
                 </td>
 

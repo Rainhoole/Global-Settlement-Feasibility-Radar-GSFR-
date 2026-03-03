@@ -182,7 +182,7 @@ function App() {
           <div className="gsfr-status-bar">
             <span>{t('Countries Evaluated')}: {countries.length}</span>
             <span>{t('Data Completeness')}: 87%</span>
-            <span>{t('Last Update')}: 2026-02-28</span>
+            <span>{t('Last Update')}: 2026-03-02</span>
           </div>
         </section>
       </div>

@@ -2,6 +2,7 @@
 import type { CountryData } from '../types/country';
 import { flagEmoji, scoreColor, openfxBadgeColor, openfxLabel } from '../utils';
 import { useI18n } from '../i18n';
+import { isN8nPassed } from '../data/n8nPassedCodes';
 
 interface DetailPanelProps {
   country: CountryData;
@@ -172,6 +173,7 @@ export function DetailPanel({ country, onClose }: DetailPanelProps) {
           >
             OpenFX: {t(openfxLabel(country.openfx.status))}
           </span>
+          {isN8nPassed(country.code) && <span className="detail-tag detail-tag-n8n">{t('N8N Passed')}</span>}
           <span className="detail-tag">{t(country.region)}</span>
           {country.openfx.currency && <span className="detail-tag">{country.openfx.currency}</span>}
           {country.openfx.eta && <span className="detail-tag">ETA: {country.openfx.eta}</span>}

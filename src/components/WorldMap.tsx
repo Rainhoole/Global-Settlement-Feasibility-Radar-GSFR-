@@ -2,6 +2,7 @@
 import { countriesByCode } from '../data';
 import { alpha2FromGeoId } from '../data/countryCodeMap';
 import { getOpenfxMapColor, getOpenfxMapStatus, hasOpenfxHoverAccent } from '../data/openfxMap';
+import { isN8nPassed } from '../data/n8nPassedCodes';
 import type { CountryData } from '../types/country';
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -37,21 +38,28 @@ export function WorldMap({ onCountryClick, onCountryHover, onMouseMove, filtered
               const fillColor = isFiltered ? getOpenfxMapColor(mapStatus) : 'var(--gsfr-map-muted)';
               const isSelected = countryData && countryData.code === selectedCode;
               const useHoverAccent = Boolean(countryData && isFiltered && hasOpenfxHoverAccent(mapStatus));
+              const isN8nCountry = Boolean(countryData && isN8nPassed(countryData.code));
+              const strokeColor = isSelected
+                ? 'var(--rh-accent-color)'
+                : isN8nCountry
+                  ? 'var(--gsfr-map-n8n-stroke)'
+                  : 'var(--gsfr-map-stroke)';
+              const strokeWidth = isSelected ? 1.6 : isN8nCountry ? 0.85 : 0.4;
 
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
                   fill={fillColor}
-                  stroke={isSelected ? 'var(--rh-accent-color)' : 'var(--gsfr-map-stroke)'}
-                  strokeWidth={isSelected ? 1.6 : 0.4}
+                  stroke={strokeColor}
+                  strokeWidth={strokeWidth}
                   style={{
                     default: { outline: 'none' },
                     hover: {
                       outline: 'none',
                       fill: useHoverAccent ? 'var(--rh-accent-color)' : fillColor,
-                      stroke: useHoverAccent ? 'var(--rh-accent-color)' : 'var(--gsfr-map-stroke)',
-                      strokeWidth: useHoverAccent ? 1.1 : 0.4,
+                      stroke: useHoverAccent ? 'var(--rh-accent-color)' : strokeColor,
+                      strokeWidth: useHoverAccent ? 1.1 : strokeWidth,
                       cursor: countryData && isFiltered ? 'pointer' : 'default',
                     },
                     pressed: { outline: 'none' },

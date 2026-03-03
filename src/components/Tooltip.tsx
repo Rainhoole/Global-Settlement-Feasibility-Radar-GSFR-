@@ -1,6 +1,7 @@
 ﻿import type { CountryData } from '../types/country';
 import { flagEmoji, scoreColor, openfxBadgeColor, openfxLabel } from '../utils';
 import { useI18n } from '../i18n';
+import { isN8nPassed } from '../data/n8nPassedCodes';
 
 interface TooltipProps {
   country: CountryData;
@@ -44,6 +45,7 @@ export function Tooltip({ country, x, y }: TooltipProps) {
             {flagEmoji(country.code)} {primaryName}
           </p>
           <p className="gsfr-tooltip-country-sub">{secondaryName}</p>
+          {isN8nPassed(country.code) && <p className="gsfr-tooltip-n8n">{t('N8N Passed')}</p>}
         </div>
 
         <div className="gsfr-tooltip-index">
